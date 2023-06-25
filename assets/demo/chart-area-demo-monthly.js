@@ -2,23 +2,27 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
-var ctx = document.getElementById("myBarChart").getContext('2d');
+// Area Chart Example
+var ctx = document.getElementById("myAreaChartMonthly").getContext('2d');
 
-
-
-var background_1 = ctx.createLinearGradient(0, 0, 0, 300);
-background_1.addColorStop(0, 'red');
-background_1.addColorStop(1, 'blue');
-
-// Bar Chart Example
 var myLineChart = new Chart(ctx, {
-  type: 'bar',
+  type: 'line',
   data: {
-    labels: ["Fridge", "Aircon (Bedroom)", "Aircon (Livingroom)", "Computer", "Stove", "Oven"],
+    labels: ["February", "March", "April", "May", "June", "July"],
     datasets: [{
-      label: "Revenue",
-      backgroundColor: background_1,
-      data: [25.62, 35.13, 19.93, 5.38, 12.15, 8.09, 12.52],
+      label: "Usage",
+      lineTension: 0.3,
+      backgroundColor: "rgba(2,117,216,0.2)",
+      borderColor: "",
+
+      pointRadius: 5,
+      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+      pointHitRadius: 50,
+      pointBorderWidth: 2,
+      data: [263.13, 247.94, 312.48, 325.38, 212.15, 218.09, 252.52],
     }],
   },
   options: {
@@ -31,17 +35,17 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 7
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 40,
+          max: 450,
           maxTicksLimit: 10
         },
         gridLines: {
-          display: true
+          color: "rgba(0, 0, 0, .125)",
         }
       }],
     },
